@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<table id="data" class="table table-striped">
+
+  <thead>
+
+    <tr>
+
+      <th>short_name</th>
+      <th>overall</th>
+      <th>age</th>
+      <th>height_cm</th>
+      <th>weight_kg</th>
+      <th>club_position</th>
+      <th>nationality_name</th>
+      <th>skill_moves</th>
+      <th>international_reputation</th>
+      <th>pace</th>
+      <th>shooting</th>
+      <th>passing</th>
+      <th>dribbling</th>
+      <th>defending</th>
+      <th>physic</th>
+      <th>attacking_finishing</th>
+      <th>attacking_heading_accuracy</th>
+      <th>skill_dribbling</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+<script>
+
+  $(document).ready(function () {
+    $('#data').DataTable({
+      ajax: '/api/players',
+      pageLength: 25,
+      columns: [
+        {data: 'short_name'},
+        {data: 'overall'},
+        {data: 'age'},
+        {data: 'height_cm'},
+        {data. 'weight_kg'},
+        {data. 'club_position'},
+        {data: 'nationality_name'},
+        {data: 'skill_moves'},
+        {data: 'international_reputation'},
+        {data: 'pace'},
+        {data: 'shooting'},
+        {data: 'passing'},
+        {data: 'dribbling'},
+        {data: 'defending'},
+        {data: 'physic'},
+        {data: 'attacking_finishing'},
+        {data: 'attacking_heading_accuracy'},
+        {data: 'skill_dribbling'}
+      ],
+
+    });
+
+  });
+
+</script>
+
+{% endblock %}
